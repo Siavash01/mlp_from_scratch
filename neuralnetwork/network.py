@@ -32,21 +32,9 @@ class NeuralNetwork:
         '''
         matrix multipication of inputs and first hidden layer weigts witch does the job of creating first hidden layer neurons
         '''
-        # self.layers[0].neurons = np.dot(self.x, self.layers[0].weights)
-        # self.layers[1].neurons = np.dot(self.layers[0].neurons, self.layers[1].weights)
-
-        # alternative
-
         self.layers[0].neurons = np.dot(self.x, self.layers[0].weights)
         for i in range(1, len(self.layers)):
             self.layers[i].neurons = np.dot(self.layers[i-1].neurons, self.layers[i].weights)
-
-        # for i in range(0, self.layers[0].num_of_neurons):
-        #     self.layers[0].neurons = np.dot(self.x, self.layers[0].weights)
-        # for i in np.arange(0, self.nu_inps):
-        #     self.layers[0].neurons = np.dot(self.x, self.layers[0].weights)
-        # for i in np.arange(0, len(self.layers)):
-        #     pass
 
     def gradient_descent(self):
         pass
